@@ -55,28 +55,28 @@ If translation files already exist, just continue to translation missing string:
 If you want to translate your Centreon Web UI you have to donload translation files and install them:
 
 1. First clone this git repo to your server using command:
-
+<pre>
   $ git clone https://github.com/centreon/centreon-translations.git
-
+</pre>
 2. And select your major version of Centreon web:
-
+<pre>
   $ git branch -r
   $ git checkout -b <branch>
-
+</pre>
 3. Create the local directory for Centreon Web UI:
-
+<pre>
   $ mkdir -p /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES
-
+</pre>
 Replace '/usr/share/centreon' by installatino dir of your Centreon Web UI.
 
 3. Compile and install your language files:
-
+<pre>
   $ msgfmt message.po -o /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES/message.mo
 
   $ msgfmt help.po -o /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES/help.mo
-
+</pre>
 4. Restart Apache:
-
+<pre>
   $ service httpd restart
-
+</pre>
 5. Edit your profil on Centreon Web UI and select language.
