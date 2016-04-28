@@ -60,7 +60,7 @@ $ git clone https://github.com/centreon/centreon-translations.git
 2. And select your major version of Centreon web:
 <pre>
 $ git branch -r
-$ git checkout -b <branch>
+$ git checkout -b \<branch\>
 </pre>
 3. Create the local directory for Centreon Web UI:
 <pre>
