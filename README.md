@@ -64,14 +64,14 @@ $ git checkout -b \<branch\>
 </pre>
 3. Create the local directory for Centreon Web UI:
 <pre>
-$ mkdir -p /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES
+$ mkdir -p /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2 | cut -d \. -f 1`/LC_MESSAGES
 </pre>
 Replace '/usr/share/centreon' by installatino dir of your Centreon Web UI.
 
 3. Compile and install your language files:
 <pre>
-$ msgfmt message.po -o /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES/message.mo
-$ msgfmt help.po -o /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES/help.mo
+$ msgfmt message.po -o /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2 | cut -d \. -f 1`/LC_MESSAGES/message.mo
+$ msgfmt help.po -o /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2 | cut -d \. -f 1`/LC_MESSAGES/help.mo
 </pre>
 4. Restart Apache:
 <pre>
